@@ -15,7 +15,20 @@ def main():
         print("Valor Inválido")
 
     # Calcular Média do Semestre
-    
+    if notas[0] < nota and notas[0] < notas[1]:
+        media = (nota + notas[1]) / 2
+    elif notas[1] < nota and notas[1] < notas[0]:
+        media = (notas[0] + nota) / 2
+    else:
+        media = (notas[0] + notas[1]) / 2
+        
+    # Exibir Situação
+    if media >= 6:
+        print("O Aluno foi APROVADO!!")
+    elif media <= 3:
+        print("O Aluno foi REPROVADO!!")
+    elif 3 < media < 6:
+        print("O Aluno está de EXAME FINAL!!")
 
 
 # Principal
