@@ -1,3 +1,5 @@
+from Coisas import continuar
+
 # Definições
 def main():
 
@@ -48,4 +50,10 @@ def main():
 
 
 # Principal
-main()
+while True:
+    main()
+    c = continuar.continuar()
+    if c == True:
+        continue
+    else:
+        break
