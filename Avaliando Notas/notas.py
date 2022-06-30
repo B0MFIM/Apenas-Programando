@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(6, "c:\\Users\\bomfi\\OneDrive\\Documentos\\MeusProjetos\\Apenas-Programando")
 from Coisas import continuar
 
 # Definições
