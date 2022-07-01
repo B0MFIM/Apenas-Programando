@@ -19,12 +19,13 @@ quantidade = tabela_vendas[["ID Loja", "Quantidade"]].groupby("ID Loja").sum()
 
 # Calcular o ticket médio por produto em cada loja
 ticket_media = (faturamento["Valor Final"] / quantidade["Quantidade"]).to_frame()
+ticket_media = ticket_media.rename(columns={0: "Ticket Médio"})
 
 
-# Enviar um Email com um relatório
+# Declarando Email do Relatório
 outlook = win32.Dispatch("outlook.application")
 mail = outlook.CreateItem(0)
-mail.To = "email@gmail.com"
+mail.To = "genérico@gmail.com"
 mail.Subject = "Relatório de Vendas por Loja"
 mail.HTMLBody = f"""
 <p>Prezados,</p>
@@ -32,13 +33,13 @@ mail.HTMLBody = f"""
 <p>Segue o Relatório de Vendas por cada Loja</p>
 
 <p>Faturamento:</p>
-{faturamento.to_html()}
+{faturamento.to_html(formatters={"Valor Final": "R${:,.2f}".format})}
 
 <p>Quantidade Vendida:</p>
 {quantidade.to_html()}
 
 <p>Ticket Médio dos Produtos em cada Loja:</p>
-{ticket_media.to_html()}
+{ticket_media.to_html(formatters={"Ticket Médio": "R${:,.2f}".format})}
 
 <p>Qualquer dúvida estou à disposição.</p>
 
@@ -47,5 +48,6 @@ mail.HTMLBody = f"""
 <p>Bomfim</p>
 """
 
+# Enviando o Email
 mail.Send()
 print("Email Enviado...")
