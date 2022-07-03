@@ -1,3 +1,5 @@
+# ESTE ROBÔ FOI DELETADO!!
+
 import discord
 import os
 
@@ -31,3 +33,5 @@ intents.members = True
 
 client = MyClient(intents=intents)
 client.run('My Token Goes Here')
+
+# ESTE ROBÔ FOI DELETADO!!
