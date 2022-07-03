@@ -53,4 +53,4 @@ async def curret_time():
 
 
 # EXECUTAR O BOT
-bot.run("OTkzMjUwNjE0NDAwMjc0NTA0.Gxl1UD.VYbxtMe7BIY4euG7lZWPAmVuObp4TBQqwwDWHQ")
+bot.run("token here")
