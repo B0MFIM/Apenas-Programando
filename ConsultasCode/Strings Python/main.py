@@ -52,4 +52,29 @@ for letra in nome:
     print(letra)
 # Dividindo o nome em uma lista
 palavras = nome.split()
-print(palavras)
+print(palavras) 
+
+# Acessando um arquivo de texto
+import io
+with io.open("C:\\Users\\bomfi\\OneDrive\\Documentos\\MeusProjetos\\Apenas-Programando\\emails.txt", "r") as t:
+    texto = t.read()
+print(texto)
+# Acessando um arquivo de texto e separando as linhas
+with io.open("C:\\Users\\bomfi\\OneDrive\\Documentos\\MeusProjetos\\Apenas-Programando\\emails.txt", "r") as l:
+    linhas = l.readlines()
+print(linhas)
+# removendo marcador \n
+emails = texto.split("\n")
+print(emails)
+# fatiamento
+print(emails[2])
+posição = emails[0].find("@")
+print(posição)
+print(emails[0][:5])
+
+# .format
+n1 = 4
+n2 = 10
+media = (n1 + n2)/2
+print("A 1° nota é: {} A 2° nota é: {} A média é: {}".format(n1, n2, media))
+print(f"A nota do Bomfim é de {media}")
