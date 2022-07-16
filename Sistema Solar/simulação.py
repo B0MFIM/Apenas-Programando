@@ -1,4 +1,3 @@
-from turtle import distance
 import pygame
 import math
 pygame.init()
