@@ -166,7 +166,7 @@ def main():
         pygame.display.update()
 
     # SAINDO DA INTERFACE (NOSSA JANELA)
-    pygame.quit(janela)
+    pygame.quit()
 
 # CHAMANDO A FUNÇÃO MAIN
 main()
